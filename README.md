@@ -3,4 +3,4 @@
 Swim tracking
 
 To start:
->>node app.js
+>node app.js
