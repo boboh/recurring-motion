@@ -2,3 +2,11 @@
     font-family: "Big Caslon";
     text-align: center;
 }
+
+body {
+    background: url('/images/open_water.jpeg') no-repeat center center fixed;
+}
+
+.swim-class {
+    background: floralwhite;
+}
