@@ -22,7 +22,12 @@ app.get('/',function(req,res){
 
 app.post('/',function(req,res){
   //console.log(req.body.distance);
-  res.send("Nice work on the "+req.body.distance+" meters. Thanks for letting us know");
+  //res.send("Nice work on the "+req.body.distance+" meters. Thanks for letting us know");
+  res.render('logswim', {swimDistance: req.body.distance})
+});
+
+app.get('/about',function(req,res){
+  res.render('about');
 });
 
 module.exports = app;

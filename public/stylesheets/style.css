@@ -8,5 +8,6 @@ body {
 }
 
 .swim-class {
-    background: floralwhite;
+    //background: floralwhite;
+    background: rgba(255,250,240, 0.5);
 }
