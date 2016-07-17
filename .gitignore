@@ -1,5 +1,6 @@
-# Config
+# Config Files
 config.js
+knexfile.js
 
 # Idea workspace
 .idea

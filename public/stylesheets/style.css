@@ -3,6 +3,11 @@
     text-align: center;
 }
 
+.helper-text {
+    font-family: "Helvetica";
+    text-align: center;
+}
+
 body {
     background: url('/images/open_water.jpeg') no-repeat center center fixed;
 }
@@ -10,4 +15,6 @@ body {
 .swim-class {
     //background: floralwhite;
     background: rgba(255,250,240, 0.5);
+    font-family: "Big Caslon";
+    text-align: center;
 }

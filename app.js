@@ -6,6 +6,8 @@ var bodyParser = require('body-parser');
 var config = require('./config');
 var port = '3000';
 var server = http.createServer(app);
+var knexfile = require('./knexfile');
+var knex = require('knex')(knexfile.development);
 
 server.listen(port);
 
@@ -16,14 +18,19 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/',function(req,res){
-  //res.send("How far did you swim today?");
   res.render('index');
 });
 
 app.post('/',function(req,res){
-  //console.log(req.body.distance);
-  //res.send("Nice work on the "+req.body.distance+" meters. Thanks for letting us know");
-  res.render('logswim', {swimDistance: req.body.distance})
+  knex('swims')
+      .insert({distance: req.body.distance})
+      .then(function(){
+        res.render('logswim', {swimDistance: req.body.distance});
+      })
+      .catch(function(error){
+        console.error(error);
+        res.send(error);
+      });
 });
 
 app.get('/about',function(req,res){
